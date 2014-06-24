@@ -75,9 +75,9 @@ public class MemberServiceJunit {
 		try {
 			logger.debug("MemberServiceJunit.testSaveMemberWithFollower()");
 			Member mbr1 = new Member();
-			mbr1.setUsername("ari");
-			mbr1.setNickName("ari lasso");
-			mbr1.setCompleteName("ari lasso");
+			mbr1.setUsername("sherina19");
+			mbr1.setNickName("sherina");
+			mbr1.setCompleteName("sherina munaf");
 			mbr1.setUinID("9999999");
 			mbr1.setAddress("jakartaa city");
 			mbr1.setBiography("Anak Uin, angkatan 2005");
@@ -89,8 +89,8 @@ public class MemberServiceJunit {
 		}
 	}
 	
-//	@Test
-	public final void updateMemberFollower() {
+	@Test
+	public final void updateMember() {
 		//need to put validation
 		Member m = new Member();
 		try {
@@ -111,6 +111,8 @@ public class MemberServiceJunit {
 		followers.add(f);
 		m.setFollowers(followers);
 		
+		m.setBiography("Singer");
+		
 		
 		try {
 			logger.debug("MemberServiceJunit.updateMemberFollower()");
@@ -126,7 +128,7 @@ public class MemberServiceJunit {
 		
 		try {
 			logger.debug("MemberServiceJunit.deleteMember()");
-			memberServices.deleteMember("dddss");
+			memberServices.deleteMember("sherina19");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -186,7 +188,7 @@ public class MemberServiceJunit {
 		}
 	}
 	
-	@Test
+//	@Test
 	public final void testGetAllMemberByFollower(){
 		logger.debug("MemberServiceJunit.testGetAllMemberByFollower()");
 		Follower f = new Follower();

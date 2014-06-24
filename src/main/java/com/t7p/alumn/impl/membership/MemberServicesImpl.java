@@ -59,8 +59,10 @@ public class MemberServicesImpl implements MemberServices {
 	public void updateMember(String key, Member member) throws Exception {
 		logger.debug("MemberServicesImpl.updateMember()");
 		try {
-			Query q = new Query(Criteria.where("_id").is(key));
-			mongoTemplate.updateFirst(q, update, Member.class);
+//			Query q = new Query(Criteria.where("_id").is(key));
+//			update.set(key, member);
+//			mongoTemplate.updateFirst(q, update, Member.class);
+			mongoTemplate.save(member);
 		} catch (Exception e) {
 			logger.error("error happens : " + e.getMessage());
 			e.printStackTrace();
